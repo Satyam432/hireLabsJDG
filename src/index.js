@@ -42,7 +42,7 @@ app.post('/generate-job-description', async (req, res) => {
     }
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+// Start the server and bind to 0.0.0.0 to allow external requests
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${port}`);
 });
