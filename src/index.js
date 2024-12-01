@@ -1,9 +1,13 @@
-import express from 'express';  // Use import instead of require
+import express from 'express'; // Use import instead of require
 import bodyParser from 'body-parser';
+import cors from 'cors'; // Import the CORS package
 import { generateJobDescription } from './claude.js'; // Import the function to interact with Claude AI
 
 const app = express();
 const port = 3000;
+
+// Middleware to enable CORS
+app.use(cors());
 
 // Middleware to parse incoming JSON requests
 app.use(bodyParser.json());
