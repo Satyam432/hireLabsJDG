@@ -1,17 +1,9 @@
 import express from 'express';  // Use import instead of require
 import bodyParser from 'body-parser';
-import cors from 'cors'; // Import the CORS middleware
 import { generateJobDescription } from './claude.js'; // Import the function to interact with Claude AI
 
 const app = express();
 const port = 3000;
-
-// Enable CORS with custom settings
-app.use(cors({
-    origin: 'https://hirelabs.vercel.app', // Replace with the allowed origin
-    methods: 'GET,POST,PUT,DELETE', // Specify allowed HTTP methods
-    allowedHeaders: 'Content-Type,Authorization', // Specify allowed headers
-}));
 
 // Middleware to parse incoming JSON requests
 app.use(bodyParser.json());
